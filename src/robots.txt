@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /login/
+Disallow: /register/
+Disallow: /private/
+
+Sitemap: https://www.elia.kz/sitemap.xml
