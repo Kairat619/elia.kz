@@ -10,7 +10,11 @@ module.exports = function(eleventyConfig) {
         return theDate.toLocaleDateString(locale, options);
       });
 
-
+      module.exports = function(eleventyConfig) {
+        eleventyConfig.addCollection("products", function(collectionApi) {
+            return collectionApi.getFilteredByGlob("./src/products/*.md");
+        });
+    };
 
       return {
 

@@ -118,14 +118,17 @@ title: Home
         <div class="tab-content jump">
             <div class="tab-pane" id="product-1">
                 <div class="row">
+                 {% for product in collections.product %}
+        {% if "new arrival" in product.data.tags %}
+                    
                     <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-4.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-4.jpg" alt="">
+                                <a href="{{ product.url }}">
+                                    <img class="default-img" src="{{ product.data.dimg }}" alt="">
+                                    <img class="hover-img" src="{{ product.data.himg }}" alt="">
                                 </a>
-                                <span class="pink">-10%</span>
+                                <span class="{% if product.data.condition == 'new' %}purple{% else %}pink{% endif %}">{{ product.data.condition }}</span>
                                 <div class="product-action-2">
                                     <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
                                     <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
@@ -134,10 +137,10 @@ title: Home
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Himaly Face Wash</a></h3>
+                                    <h3><a href="{{product.url}}">{{ product.data.title }}</a></h3>
                                     <div class="price-2">
-                                        <span>$ 60.00</span>
-                                        <span class="old">$ 60.00</span>
+                                        <span>{{ product.data.newprice }}</span>
+                                        <span class="old">{{ product.data.oldprice }}</span>
                                     </div>
                                 </div>
                                 <div class="pro-wishlist-2">
@@ -146,210 +149,25 @@ title: Home
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-3.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-3.jpg" alt="">
-                                </a>
-                                <span class="purple">New</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Perfume Women</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 70.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-2.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-2.jpg" alt="">
-                                </a>
-                                <span class="pink">-10%</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Moisturizer Cream</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 40.00</span>
-                                        <span class="old">$ 50.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-1.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-1.jpg" alt="">
-                                </a>
-                                <span class="purple">New</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Face Powder</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 80.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-8.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-8.jpg" alt="">
-                                </a>
-                                <span class="pink">-10%</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Makeup Brush</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 30.00</span>
-                                        <span class="old">$ 40.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-7.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-7.jpg" alt="">
-                                </a>
-                                <span class="purple">New</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Tanning Lotion</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 90.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-6.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-6.jpg" alt="">
-                                </a>
-                                <span class="pink">-10%</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Powder Puff</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 20.00</span>
-                                        <span class="old">$ 30.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-5.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-5.jpg" alt="">
-                                </a>
-                                <span class="purple">New</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Liquid Foundation</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 50.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {%- endif %}
+                  
+                 {%- endfor %}
+                   
                 </div>
             </div>
             <div class="tab-pane active" id="product-2">
                 <div class="row">
+                    {% for product in collections.product %}
+                       {% if "best sellers" in product.data.tags %}
+                    
                     <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-1.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-1.jpg" alt="">
+                                <a href="{{ product.url }}">
+                                    <img class="default-img" src="{{ product.data.dimg }}" alt="">
+                                    <img class="hover-img" src="{{ product.data.himg }}" alt="">
                                 </a>
-                                <span class="pink">-10%</span>
+                                <span class="{% if product.data.condition == 'new' %}purple{% else %}pink{% endif %}">{{ product.data.condition }}</span>
                                 <div class="product-action-2">
                                     <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
                                     <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
@@ -358,10 +176,10 @@ title: Home
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Face Powder</a></h3>
+                                    <h3><a href="{{product.url}}">{{ product.data.title }}</a></h3>
                                     <div class="price-2">
-                                        <span>$ 60.00</span>
-                                        <span class="old">$ 60.00</span>
+                                        <span>{{ product.data.newprice }}</span>
+                                        <span class="old">{{ product.data.oldprice }}</span>
                                     </div>
                                 </div>
                                 <div class="pro-wishlist-2">
@@ -370,210 +188,24 @@ title: Home
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-2.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-2.jpg" alt="">
-                                </a>
-                                <span class="purple">New</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Moisturizer Cream</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 70.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-3.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-3.jpg" alt="">
-                                </a>
-                                <span class="pink">-10%</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Perfume Women</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 40.00</span>
-                                        <span class="old">$ 50.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-4.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-4.jpg" alt="">
-                                </a>
-                                <span class="purple">New</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Himaly Face Wash</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 80.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-5.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-5.jpg" alt="">
-                                </a>
-                                <span class="pink">-10%</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Liquid Foundation</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 30.00</span>
-                                        <span class="old">$ 40.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-6.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-6.jpg" alt="">
-                                </a>
-                                <span class="purple">New</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Powder Puff</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 90.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-7.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-7.jpg" alt="">
-                                </a>
-                                <span class="pink">-10%</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Tanning Lotion</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 20.00</span>
-                                        <span class="old">$ 30.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-8.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-8.jpg" alt="">
-                                </a>
-                                <span class="purple">New</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Makeup Brush</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 50.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {%- endif %}
+                  
+                 {%- endfor %}
                 </div>
             </div>
             <div class="tab-pane" id="product-3">
                 <div class="row">
+                    {% for product in collections.product %}
+                         {% if loop.index <= 8 %}
+                    
                     <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
                         <div class="product-wrap-2 mb-25">
                             <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-8.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-8.jpg" alt="">
+                                <a href="{{ product.url }}">
+                                    <img class="default-img" src="{{ product.data.dimg }}" alt="">
+                                    <img class="hover-img" src="{{ product.data.himg }}" alt="">
                                 </a>
-                                <span class="pink">-10%</span>
+                                <span class="{% if product.data.condition == 'new' %}purple{% else %}pink{% endif %}">{{ product.data.condition }}</span>
                                 <div class="product-action-2">
                                     <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
                                     <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
@@ -582,10 +214,10 @@ title: Home
                             </div>
                             <div class="product-content-2">
                                 <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Makeup Brush</a></h3>
+                                    <h3><a href="{{product.url}}">{{ product.data.title }}</a></h3>
                                     <div class="price-2">
-                                        <span>$ 60.00</span>
-                                        <span class="old">$ 60.00</span>
+                                        <span>{{ product.data.newprice }}</span>
+                                        <span class="old">{{ product.data.oldprice }}</span>
                                     </div>
                                 </div>
                                 <div class="pro-wishlist-2">
@@ -594,198 +226,9 @@ title: Home
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-7.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-7.jpg" alt="">
-                                </a>
-                                <span class="purple">New</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Tanning Lotion</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 70.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-6.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-6.jpg" alt="">
-                                </a>
-                                <span class="pink">-10%</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Powder Puff</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 40.00</span>
-                                        <span class="old">$ 50.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-5.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-5.jpg" alt="">
-                                </a>
-                                <span class="purple">New</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Liquid Foundation</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 80.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="/assets/img/product/hm13-pro-4.jpg" alt="">
-                                    <img class="hover-img" src="/assets/img/product/hm13-pro-4.jpg" alt="">
-                                </a>
-                                <span class="pink">-10%</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Himaly Face Wash</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 30.00</span>
-                                        <span class="old">$ 40.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="assets/img/product/hm13-pro-3.jpg" alt="">
-                                    <img class="hover-img" src="assets/img/product/hm13-pro-3.jpg" alt="">
-                                </a>
-                                <span class="purple">New</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Perfume Women</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 90.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="assets/img/product/hm13-pro-2.jpg" alt="">
-                                    <img class="hover-img" src="assets/img/product/hm13-pro-2.jpg" alt="">
-                                </a>
-                                <span class="pink">-10%</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Moisturizer Cream</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 20.00</span>
-                                        <span class="old">$ 30.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
-                        <div class="product-wrap-2 mb-25">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="assets/img/product/hm13-pro-1.jpg" alt="">
-                                    <img class="hover-img" src="assets/img/product/hm13-pro-1.jpg" alt="">
-                                </a>
-                                <span class="purple">New</span>
-                                <div class="product-action-2">
-                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
-                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-2">
-                                <div class="title-price-wrap-2">
-                                    <h3><a href="product-details.html">Face Powder</a></h3>
-                                    <div class="price-2">
-                                        <span>$ 50.00</span>
-                                    </div>
-                                </div>
-                                <div class="pro-wishlist-2">
-                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {%- endif %}
+                  
+                 {%- endfor %}
                 </div>
             </div>
         </div>

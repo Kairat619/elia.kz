@@ -57,3 +57,36 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 Thank you for using Elia.kz! If you have any questions, feel free to contact us at [contact information].
+
+  {% for product in collections.product %}
+                 {% if loop.index <= 8 %}
+                    <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6">
+                        <div class="product-wrap-2 mb-25">
+                            <div class="product-img">
+                                <a href="{{product.url}}">
+                                    <img class="default-img" src="{{ product.data.default-img}}" alt="">
+                                    <img class="hover-img" src="{{ product.data.hover-img}}" alt="">
+                                </a>
+                                <span class="pink">{{ product.data.condition }}</span>
+                                <div class="product-action-2">
+                                    <a title="Add To Cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a title="Quick View" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></a>
+                                    <a title="Compare" href="#"><i class="fa fa-retweet"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content-2">
+                                <div class="title-price-wrap-2">
+                                    <h3><a href="product-details.html">{{ product.data.title }}</a></h3>
+                                    <div class="price-2">
+                                        <span>{{ product.data.newprice }}</span>
+                                        <span class="old">{{ product.data.oldprice }}</span>
+                                    </div>
+                                </div>
+                                <div class="pro-wishlist-2">
+                                    <a title="Wishlist" href="wishlist.html"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   {% endif %}
+                   {% endfor %}
