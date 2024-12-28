@@ -1,8 +1,8 @@
 ---
 layout: 'product-details.njk'
 title: "Exclusive Powder "
-newprice: "&45.00"
-oldprice: "&60.00"
+newprice: "$45.00"
+oldprice: "$60.00"
 condition: -5%
 dimg: /assets/img/product/hm13-pro-11.jpg
 himg: /assets/img/product/hm13-pro-9.jpg

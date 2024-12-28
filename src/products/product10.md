@@ -1,7 +1,7 @@
 ---
 layout: 'product-details.njk'
 title: "Perfect Cream"
-newprice: "&45.00"
+newprice: "$45.00"
 oldprice: 
 condition: new
 dimg: /assets/img/product/hm13-pro-9.jpg

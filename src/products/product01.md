@@ -1,8 +1,8 @@
 ---
 layout: 'product-details.njk'
 title: "Face Powder"
-newprice: "&45.00"
-oldprice: "&60.00"
+newprice: "$45.00"
+oldprice: "$60.00"
 condition: new
 dimg: /assets/img/product/hm13-pro-1.jpg
 himg: /assets/img/product/hm13-pro-3.jpg

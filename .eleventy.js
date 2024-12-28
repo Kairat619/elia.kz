@@ -16,6 +16,14 @@ module.exports = function(eleventyConfig) {
         });
     };
 
+    module.exports = function(eleventyConfig) {
+      eleventyConfig.addFilter("intersect", (arr1, arr2) => {
+          if (!Array.isArray(arr1) || !Array.isArray(arr2)) return [];
+          return arr1.filter(value => arr2.includes(value));
+      });
+  };
+  
+
       return {
 
         // allows .html files to contain nunjucks templating language

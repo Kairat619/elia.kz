@@ -1,8 +1,8 @@
 ---
 layout: 'product-details.njk'
 title: "Himaly Face Wash"
-newprice: "&45.00"
-oldprice: "&60.00"
+newprice: "$45.00"
+oldprice: "$60.00"
 condition: new
 dimg: /assets/img/product/hm13-pro-7.jpg
 himg: /assets/img/product/hm13-pro-8.jpg

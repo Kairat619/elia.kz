@@ -1,7 +1,7 @@
 ---
 layout: 'product-details.njk'
 title: "Perfume Women"
-newprice: "&45.00"
+newprice: "$45.00"
 oldprice: 
 condition: new
 dimg: /assets/img/product/hm13-pro-5.jpg

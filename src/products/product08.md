@@ -1,8 +1,8 @@
 ---
 layout: 'product-details.njk'
 title: "Makeup Brushr"
-newprice: "&45.00"
-oldprice: "&60.00"
+newprice: "$45.00"
+oldprice: "$60.00"
 condition: -20%
 dimg: /assets/img/product/hm13-pro-8.jpg
 himg: /assets/img/product/hm13-pro-7.jpg

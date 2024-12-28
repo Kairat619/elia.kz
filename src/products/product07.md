@@ -1,8 +1,8 @@
 ---
 layout: 'product-details.njk'
 title: "Tanning Lotion"
-newprice: "&45.00"
-oldprice: "&60.00"
+newprice: "$45.00"
+oldprice: "$60.00"
 condition: -15%
 dimg: /assets/img/product/hm13-pro-3.jpg
 himg: /assets/img/product/hm13-pro-1.jpg

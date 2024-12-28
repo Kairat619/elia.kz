@@ -1,8 +1,8 @@
 ---
 layout: 'product-details.njk'
 title: "Moisturizer Cream"
-newprice: "&45.00"
-oldprice: "&60.00"
+newprice: "$45.00"
+oldprice: "$60.00"
 condition: -10%
 dimg: /assets/img/product/hm13-pro-4.jpg
 himg: /assets/img/product/hm13-pro-2.jpg
